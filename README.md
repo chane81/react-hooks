@@ -20,10 +20,11 @@
     > 컴포넌트 업데이트 직후 호출
   - componentWillUnmount
     > 컴포넌트가 unmount 되기 전 호출
-    
+
     > setState 호출 불가
   - componentDidCatch 
     > 컴포넌트 에러발생시
+    
   ![](/public/images/class_component_lifecycle.jpg)
 
 # `useState`
