@@ -6,6 +6,7 @@
     > 생성자
   - getDerivedStateFromProps
     > 새 props 를 받았을 때
+
     > state 갱신 할 때
   - shouldComponentUpdate
     > 컴포넌트 업데이트 직전 호출
@@ -19,6 +20,7 @@
     > 컴포넌트 업데이트 직후 호출
   - componentWillUnmount
     > 컴포넌트가 unmount 되기 전 호출
+    
     > setState 호출 불가
   - componentDidCatch 
     > 컴포넌트 에러발생시
