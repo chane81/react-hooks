@@ -24,7 +24,7 @@
     > setState 호출 불가
   - componentDidCatch 
     > 컴포넌트 에러발생시
-    
+
   ![](/public/images/class_component_lifecycle.jpg)
 
 # `useState`
@@ -35,8 +35,10 @@
   - 하지만 위의 라이프사이클 기능과는 약간의 차이가 있음
   - `클래스형 컴포넌트의 componentDidUpdate() 함수의 경우는 상태값 update 시에만 발생하지만 useEffect는 컴포넌트 마운트시 또는 상태값 update 시에 발생한다.`
   - 효과
-    > ComponentDidMount 효과만 
+    > ComponentDidMount 효과만
+
     > ComponentDidMount 또는 특정 상태값 update 에 대해서만
+    
     > componentWillUnmount 만
 
 # `useReducer`
