@@ -1,0 +1,34 @@
+{
+	// Editor 설정
+
+	"editor.renderWhitespace": "all",
+	"editor.tabSize": 2,
+	"editor.renderIndentGuides": false,
+	"editor.formatOnSave": false,
+	"editor.minimap.enabled": false,
+	"editor.fontFamily": "Consolas, 'Courier New', monospace, 'Segoe UI emoji', 'Segoe UI Symbol'",
+	"[javascript]": {
+			"editor.formatOnSave": true
+	},
+
+	// perttier 설정
+	"prettier.jsxSingleQuote": true,
+	"prettier.tabWidth": 2,
+	"prettier.useTabs": true,
+	"prettier.printWidth": 80,
+	"prettier.singleQuote": true,
+	"prettier.bracketSpacing": true,
+	"prettier.trailingComma": "none",
+	"prettier.tslintIntegration": true,
+
+
+
+	// 터미널 설정
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.cursorStyle": "underline",
+	"terminal.integrated.shellArgs.windows": ["/K", "chcp 65001"],
+	"terminal.integrated.fontFamily": "Lucida console, Consolas, 'Courier New', monospace, 'Segoe UI emoji', 'Segoe UI Symbol'",
+	"terminal.integrated.fontSize": 14,
+
+

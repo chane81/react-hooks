@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 리액트 hooks
+  - 리액트 v16.8 에 도입된 함수형 컴포넌트에서 상태관리를 할 수 있게 하는 신 기능
 
-## Available Scripts
+# hook 전에 `클래스형 컴포넌트 Lifecycle`을 알아보자
+  - constructor
+    > 생성자
+  - getDerivedStateFromProps
+    > 새 props 를 받았을 때
+    > state 갱신 할 때
+  - shouldComponentUpdate
+    > 컴포넌트 업데이트 직전 호출
+  - render
+    > 렌더링
+  - getSnapshotBeforeUpdate
+    > DOM 업데이트 직전 호출
+  - componentDidMount
+    > 컴포넌트가 만들어지고 render 이후에 호출
+  - componentDidUpdate
+    > 컴포넌트 업데이트 직후 호출
+  - componentWillUnmount
+    > 컴포넌트가 unmount 되기 전 호출
+    > setState 호출 불가
+  - componentDidCatch 
+    > 컴포넌트 에러발생시
+  ![](/public/images/class_component_lifecycle.jpg)
 
-In the project directory, you can run:
+# `useState`
+  - 기본적인 상태관리 Hook
+  
+# `useEffect`
+  - 컴포넌트의 componentDidMount, componentDidUpdate, componentWillUnmount 라이프사이클 기능을 이걸 가지고 쓸 수 있음
+  - 하지만 위의 라이프사이클 기능과는 약간의 차이가 있음
+  - `클래스형 컴포넌트의 componentDidUpdate() 함수의 경우는 상태값 update 시에만 발생하지만 useEffect는 컴포넌트 마운트시 또는 상태값 update 시에 발생한다.`
+  - 효과
+    > ComponentDidMount 효과만 
+    > ComponentDidMount 또는 특정 상태값 update 에 대해서만
+    > componentWillUnmount 만
 
-### `npm start`
+# `useReducer`
+  - 맞다 리덕스의 그 리듀서와 동일한 개념이다.
+  - 각 액션별로 상태값을 변경하게 하는 리듀서를 두어서 상태 변경에 대해 디스패치를 통해 리듀서에서 관리하게 한다.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 나머내용은 좀 쉬고 테스트
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# `useContext`
 
-### `npm test`
+# `useMemo`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# `useCallback`
 
-### `npm run build`
+# `useRef`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# `커스텀 hooks`
