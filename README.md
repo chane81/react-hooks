@@ -32,6 +32,7 @@
   
 # `useEffect`
   - 컴포넌트의 componentDidMount, componentDidUpdate, componentWillUnmount 라이프사이클 기능을 이걸 가지고 쓸 수 있음
+  - `렌더링 후에 호출 된다.`
   - 하지만 위의 라이프사이클 기능과는 약간의 차이가 있음
   - `클래스형 컴포넌트의 componentDidUpdate() 함수의 경우는 상태값 update 시에만 발생하지만 useEffect는 컴포넌트 마운트시 또는 상태값 update 시에 발생한다.`
   - 효과
@@ -56,6 +57,14 @@
     > 3. 상태값 useContext() 를 호출해 사용 - /components/UseContextExample.js
 
 # `useMemo`
+  - `렌더링 전에 호출된다.`
+  - useEffect 와 차이는 렌더링 전에 호출되느냐 렌더링 후 호출되느냐의 차이다.
+  - useEffect도 값의 변화에 따라 호출할 수 있기 때문
+  - 단, useEffect는 사용시에 값을 변화시키는 로직이 들어갈 경우 다시 또 컴포넌트 업데이트를 한다.
+  - 같은값이 아니라 값이 변경되었을 때 호출되도록 할 때 쓰이고, 최적화에 사용하면 좋다.
+  - react 의 메모라이즈 기법
+  - vue 의 computed 나 mobx 의 views 가 같은 맥락이다.
+
 
 # `useCallback`
 

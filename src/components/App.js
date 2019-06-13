@@ -4,6 +4,7 @@ import UseStateExample from './UseStateExample';
 import UseEffectExample from './UseEffectExample';
 import UseReducerExample from './UseReducerExample';
 import UseContextExample from './UseContextExample';
+import UseMemoExample from './UseMemoExample';
 import ClassLifecycle from './ClassLifecycle';
 import { ContextProvider } from '../context/MyContext';
 import Home from './Home';
@@ -37,6 +38,11 @@ function App() {
 					exact={true}
 					path={'/use-context-example'}
 					component={UseContextExample}
+				/>
+				<Route
+					exact={true}
+					path={'/use-memo-example'}
+					component={UseMemoExample}
 				/>
 			</Router>
 		</ContextProvider>

@@ -9,6 +9,7 @@ function Home() {
 			<Link to='/use-effect-example'>UseEffect</Link>
 			<Link to='/use-context-example'>UseContext</Link>
 			<Link to='/use-reducer-example'>UseReducer</Link>
+			<Link to='/use-memo-example'>UseMemo</Link>
 		</div>
 	);
 }
