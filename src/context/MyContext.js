@@ -7,6 +7,9 @@ const initState = {
 };
 const MyContext = createContext(initState);
 
+/**
+ *  로다쉬 merge 를 이용한 불변성을 유지한 객체 리턴} state
+ */
 const reducer = (state, action) => {
 	switch (action.name) {
 		case 'INCREMENT': {
