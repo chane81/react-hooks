@@ -53,7 +53,7 @@ function UseMemoExample() {
 				별명입력
 			</button>
 			<div>
-				<Link to='/'>언마운트시 useEffect 테스트</Link>
+				<Link to='/'>언마운트시 호출 테스트</Link>
 			</div>
 		</div>
 	);
