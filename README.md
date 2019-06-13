@@ -45,9 +45,15 @@
   - 맞다 리덕스의 그 리듀서와 동일한 개념이다.
   - 각 액션별로 상태값을 변경하게 하는 리듀서를 두어서 상태 변경에 대해 디스패치를 통해 리듀서에서 관리하게 한다.
 
-# 나머내용은 좀 쉬고 테스트
-
 # `useContext`
+  - 리액트의 context 를 컴포넌트에서 useContext() 를 사용하여 상태값을 사용하거나 dispatch 할 수 있다.
+  - context 객체를 담고 있는 파일을 생성 후 provider 를 만든다.
+  - 최상위 컴포넌트에서 provider 로 감싼다.
+  - 상태값을 사용할 컴포넌트에서 useContext 를 호출하여 상태값을 사용한다.
+  - 참고
+    > 1. context 와 provider 생성 - /context/MyContext.js
+    > 2. 최상위 컴포넌트에서 ContextProvider 로 감싸기 - /components/App.js
+    > 3. 상태값 useContext() 를 호출해 사용 - /components/UseContextExample.js
 
 # `useMemo`
 
