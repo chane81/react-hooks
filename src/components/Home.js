@@ -10,6 +10,7 @@ function Home() {
 			<Link to='/use-context-example'>UseContext</Link>
 			<Link to='/use-reducer-example'>UseReducer</Link>
 			<Link to='/use-memo-example'>UseMemo</Link>
+			<Link to='/use-ref-example'>UseRef</Link>
 		</div>
 	);
 }

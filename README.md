@@ -68,9 +68,38 @@
   - react 의 메모라이즈 기법
   - vue 의 computed 나 mobx 의 views 가 같은 맥락이다.
 
-
-# `useCallback`
-
 # `useRef`
+  - 클래스형 컴포넌트에서 사용하던 ref 를 함수형 컴포넌트에서 사용가능하게 만듬
+  - 엘리먼트나 컴포넌트의 변수화
+  - useRef vs createRef
+    - 기본적으로 둘의 기능은 비슷하다.
+    - useRef 는 함수형 컴포넌트에서만 쓰이지만 createRef 는 클래스형 컴포넌트 기반에서 쓰인다.
+    - useRef 는 초기화값을 둘 수 있지만 createRef는 그렇지 못하다
+    - 참고 url
+      > https://nickymeuleman.netlify.com/blog/react-refs
+  - 기본적인 사용방법
+    ```js
+    // 일반
+    const refTxtSearch = useRef(initialValue);
 
-# `커스텀 hooks`
+    const handleSearch = e => {
+      alert(refTxtSearch.current.value);
+    }
+
+    ...
+
+    <input ref={refTxtSearch} type='text' />
+    ```
+  - typescript 사용방법
+    ```js    
+    const refTxtSearch = useRef<HTMLInputElement>(initialValue);
+
+    const handleSearch = e => {
+      alert(refTxtSearch.current!.value);
+    }
+
+    ...
+
+    <input ref={refTxtSearch} type='text />
+
+    ```
