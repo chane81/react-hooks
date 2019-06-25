@@ -24,7 +24,7 @@ function UseRefExample() {
 				/>
 			</div>
 
-			<div ref={refDvNickname}>:)</div>
+			<div ref={refDvNickname}>:D</div>
 			<button onClick={handleClick}>별명입력</button>
 		</div>
 	);
