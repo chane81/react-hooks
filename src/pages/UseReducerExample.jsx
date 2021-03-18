@@ -36,7 +36,7 @@ const inputReducer = (state, action) => {
 	};
 };
 
-function UseReducerExample() {
+const UseReducerExample = () => {
 	// 1번 리듀서에 대한 state 와 dispatch 선언
 	const [state, dispatch] = useReducer(reducer, {
 		counter: 0,

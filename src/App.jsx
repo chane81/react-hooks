@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import UseStateExample from './UseStateExample';
-import UseEffectExample from './UseEffectExample';
-import UseReducerExample from './UseReducerExample';
-import UseContextExample from './UseContextExample';
-import UseMemoExample from './UseMemoExample';
-import UseRefExample from './UseRefExample';
-import ClassLifecycle from './ClassLifecycle';
-import { ContextProvider } from '../context/MyContext';
-import Home from './Home';
+import UseStateExample from './pages/UseStateExample';
+import UseEffectExample from './pages/UseEffectExample';
+import UseReducerExample from './pages/UseReducerExample';
+import UseContextExample from './pages/UseContextExample';
+import UseMemoExample from './pages/UseMemoExample';
+import UseRefExample from './pages/UseRefExample';
+import ClassLifecycle from './pages/ClassLifecycle';
+import UseCallbackExample from './pages/UseCallbackExample';
+import { ContextProvider } from './context/MyContext';
+import Home from './pages/Home';
 
 function App() {
 	return (
-		<ContextProvider>
 			<Router>
 				<Route exact={true} path={'/'} component={Home} />
 				<Route
@@ -38,7 +38,11 @@ function App() {
 				<Route
 					exact={true}
 					path={'/use-context-example'}
-					component={UseContextExample}
+				component={() => (
+						<ContextProvider>
+							<UseContextExample />
+						</ContextProvider>
+					)}
 				/>
 				<Route
 					exact={true}
@@ -50,8 +54,12 @@ function App() {
 					path={'/use-ref-example'}
 					component={UseRefExample}
 				/>
+				<Route
+						exact={true}
+						path={'/use-callback-example'}
+						component={UseCallbackExample}
+					/>
 			</Router>
-		</ContextProvider>
 	);
 }
 

@@ -1,19 +1,9 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import usePrevious from '../hooks/usePrevious';
 
-/**
- * 이전 상태값 가져오기
- */
-function usePrevious(value) {
-	const ref = React.useRef();
 
-	React.useEffect(() => {
-		ref.current = value;
-	});
-	return ref.current;
-}
-
-function UseMemoExample() {
+const UseMemoExample = () => {
 	const [ nickname, setNickname ] = useState('');
 	const txtNickname = useRef();
 	const prevNickname = usePrevious(nickname);
@@ -60,13 +50,25 @@ function UseMemoExample() {
 	};
 
 	const getAverage = numbers => {
-		console.log('평균값 계산중..');
+		console.log('NoneMemo 평균값 계산중..');
 		if (numbers.length === 0) return 0;
 		const sum = numbers.reduce((a, b) => a + b);
 		return sum / numbers.length;
 	};
 
-	const avg = useMemo(() => getAverage(list), [list]);
+	const getMemoAverage = numbers => {
+		console.log('Memo 평균값 계산중..');
+		if (numbers.length === 0) return 0;
+		const sum = numbers.reduce((a, b) => a + b);
+		return sum / numbers.length;
+	};
+
+	// 렌더링 될 때 마다 호출
+	const nonMemoAvg = getAverage(list);
+
+	// 렌더링 시 호출이 아니라 list 값이 바뀌면 호출
+	const memoAvg = useMemo(() => getMemoAverage(list), [list]);
+
 
 	return (
 		<div>
@@ -88,11 +90,11 @@ function UseMemoExample() {
 			<button onClick={onInsert}>등록</button>
 			<ul>{list.map((val, idx) => <li key={idx}>{val}</li>)}</ul>
 			<div>
-        <b>평균 값:</b> {getAverage(list)}
+        <b>평균 값:</b> {nonMemoAvg}
       </div>
-			{/* <div>
-        <b>평균 값 memo:</b> {avg}
-      </div> */}
+			<div>
+        <b>평균 값 memo:</b> {memoAvg}
+      </div>
 		</div>
 	);
 }

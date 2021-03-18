@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function UseEffectExample() {
+const UseEffectExample = () => {
 	const [nickName, setNickName] = useState('');
 	const [drinkName, setDrinkName] = useState('');
 

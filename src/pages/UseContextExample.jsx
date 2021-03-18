@@ -7,7 +7,7 @@ import { MyContext } from '../context/MyContext';
  * 2. ContextProvider 로 감싸기 - /components/App.js 참고
  */
 
-function UseContextExample() {
+const UseContextExample = () => {
 	const { state, dispatch } = useContext(MyContext);
 
 	return (
