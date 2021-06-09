@@ -12,6 +12,7 @@ const Home = () => {
 			<Link to='/use-memo-example'>UseMemo</Link>
 			<Link to='/use-callback-example'>UseCallback</Link>
 			<Link to='/use-ref-example'>UseRef</Link>
+			<Link to='/use-swr-example'>UseSwrCounter</Link>
 		</div>
 	);
 }
