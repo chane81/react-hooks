@@ -7,20 +7,20 @@ import useSWR from 'swr';
 const UseSwrExample = () => {
   const { data } = useCounter();
 
-  const { data: userName } = useSWR('https://randomuser.me/api', async (url) => {
+  const { data: userName, isValidating } = useSWR('https://randomuser.me/api', async (url) => {
     const { results } = await (await fetch(url)).json();
     const userName = results[0].name.first + results[0].name.last;
 
     return userName;
   }, {
-    // refresh 1초
-    refreshInterval: 1000,  
+    refreshInterval: 1000
   })
 
   return (
     <div>
       <div>
-        <h1>실시간 반영 사용자명: <b>{ userName ? userName : 'Loading...' }</b></h1>
+        <h1>{ isValidating ? 'loading': 'not loading'}</h1>
+        <h1>실시간 반영 사용자명: <b>{userName ? userName : ''}</b></h1>
       </div>
       <div>
         <h1>
