@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-function UseRefExample() {
+const UseRefExample = () => {
 	const refTxtNickname = useRef();
 	const refEtc = useRef('초기값임!');
 	const refDvNickname = useRef();

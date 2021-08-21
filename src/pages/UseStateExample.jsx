@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function UseStateExample() {
+const UseStateExample = () => {
 	const [counter, setCounter] = useState(0);
 	const [nickName, setsNickName] = useState('');
 	const [drinkName, setDrinkName] = useState('');
