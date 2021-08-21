@@ -8,6 +8,7 @@ import UseMemoExample from './UseMemoExample';
 import UseRefExample from './UseRefExample';
 import ClassLifecycle from './ClassLifecycle';
 import { ContextProvider } from '../context/MyContext';
+import UseRefTypescriptExample from './UseRefTypescriptExample';
 import Home from './Home';
 
 function App() {
@@ -49,6 +50,11 @@ function App() {
 					exact={true}
 					path={'/use-ref-example'}
 					component={UseRefExample}
+				/>
+				<Route
+					exact={true}
+					path={'/use-ref-typescript-example'}
+					component={UseRefTypescriptExample}
 				/>
 			</Router>
 		</ContextProvider>

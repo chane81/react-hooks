@@ -11,6 +11,7 @@ function Home() {
 			<Link to='/use-reducer-example'>UseReducer</Link>
 			<Link to='/use-memo-example'>UseMemo</Link>
 			<Link to='/use-ref-example'>UseRef</Link>
+			<Link to='/use-ref-typescript-example'>UseRef Typescript</Link>
 		</div>
 	);
 }
