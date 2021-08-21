@@ -5,13 +5,13 @@ class UseStateExample extends Component {
 		counter: 0
 	};
 
-	onClickPlus = e => {
+	onClickPlus = () => {
 		this.setState({
 			counter: this.state.counter + 1
 		});
 	};
 
-	onClickMinus = e => {
+	onClickMinus = () => {
 		this.setState({
 			counter: this.state.counter - 1
 		});

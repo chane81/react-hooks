@@ -1,11 +1,11 @@
 import React from 'react';
-import useCounter from '../hooks/useSwrCounter'
+import useCounter from '../stores/counterStore'
 
 const UseSwrExample = () => {
-	const { data, mutate } = useCounter();
+	const { store, mutate } = useCounter();
 
-	const handleInc = () => mutate(data + 1);
-	const handleDec = () => mutate(data - 1);
+	const handleInc = () => mutate(store + 1);
+	const handleDec = () => mutate(store - 1);
 	
 	return (
 		<div>

@@ -10,7 +10,7 @@ import ClassLifecycle from './pages/ClassLifecycle';
 import UseCallbackExample from './pages/UseCallbackExample';
 import UseSwrCounter from './pages/UseSwrExample';
 import { ContextProvider } from './context/MyContext';
-import UseRefTypescriptExample from './UseRefTypescriptExample';
+import UseRefTypescriptExample from './pages/UseRefTypescriptExample';
 import Home from './pages/Home';
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
 			<Route
 				exact={true}
 				path={'/use-context-example'}
+				
 				component={() => (
 					<ContextProvider>
 						<UseContextExample />

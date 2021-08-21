@@ -1,7 +1,22 @@
 import React, { useReducer } from 'react';
 
+interface IState {
+	counter: number;
+	nickName: string;
+}
+
+interface IStateSe {
+	MYNAME: string;
+	DRINKNAME: string;
+}
+
+interface IAction {
+	name: string;
+	value: string;
+}
+
 // 1. 리듀서 - 액션의 네임을 case 명으로 사용할 경우
-const reducer = (state, action) => {
+const reducer = (state: IState, action: IAction) => {
 	console.log('1번 리듀서 prev state:', state);
 
 	switch (action.name) {
@@ -27,7 +42,7 @@ const reducer = (state, action) => {
 };
 
 // 2. 리듀서 - 액션의 네임을 상태값의 key 로 사용할 경우
-const inputReducer = (state, action) => {
+const inputReducer = (state: IStateSe, action: IAction) => {
 	console.log('2번 리듀서 prev state:', state);
 
 	return {
@@ -39,7 +54,7 @@ const inputReducer = (state, action) => {
 const UseReducerExample = () => {
 	// 1번 리듀서에 대한 state 와 dispatch 선언
 	const [state, dispatch] = useReducer(reducer, {
-		counter: 0,
+		counter: 1,
 		nickName: ''
 	});
 
@@ -58,10 +73,10 @@ const UseReducerExample = () => {
 						현재 카운터 값은 <b>{state.counter}</b> 입니다
 					</p>
 				</div>
-				<button name='INCREMENT' onClick={e => dispatch(e.target)}>
+				<button name='INCREMENT' onClick={e => dispatch(e.target as any)}>
 					+1
 				</button>
-				<button name='DECREMENT' onClick={e => dispatch(e.target)}>
+				<button name='DECREMENT' onClick={e => dispatch(e.target as any)}>
 					-1
 				</button>
 			</div>

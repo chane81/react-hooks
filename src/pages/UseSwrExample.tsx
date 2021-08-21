@@ -1,11 +1,11 @@
 import React from 'react';
 import UseSwrG1Example from './UseSwrG1Example'
 import UseSwrG2Example from './UseSwrG2Example'
-import useCounter from '../hooks/useSwrCounter'
+import useCounter from '../stores/counterStore'
 import useSWR from 'swr';
 
 const UseSwrExample = () => {
-  const { data } = useCounter();
+  const { store, mutate } = useCounter();
 
   const { data: userName, isValidating } = useSWR('https://randomuser.me/api', async (url) => {
     const { results } = await (await fetch(url)).json();
@@ -24,7 +24,7 @@ const UseSwrExample = () => {
       </div>
       <div>
         <h1>
-          현재 카운터 값은 <b>{data}</b> 입니다.
+          현재 카운터 값은 <b>{store}</b> 입니다.
         </h1>
       </div>
       <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>

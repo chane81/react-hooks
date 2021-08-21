@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
 
 const UseRefExample = () => {
-	const refTxtNickname = useRef();
+	const refTxtNickname = useRef<HTMLInputElement>(null);
 	const refEtc = useRef('초기값임!');
-	const refDvNickname = useRef();
+	const refDvNickname = useRef<HTMLDivElement>(null);
 
-	const handleClick = e => {
-		console.log(`refTxtNickname: ${refTxtNickname.current.value}`);
+	const handleClick = () => {
+		console.log(`refTxtNickname: ${refTxtNickname.current?.value}`);
 		console.log(`refEtc 초기값: ${refEtc.current}`);
-		refEtc.current += '=>' + refTxtNickname.current.value;
+		refEtc.current += '=>' + refTxtNickname.current?.value;
 		console.log(`refEtc 값 변경 후: ${refEtc.current}`);
 
-		refDvNickname.current.innerText = refTxtNickname.current.value;
+		if (refDvNickname.current)
+			refDvNickname.current.innerText = refTxtNickname.current?.value || '';
 	};
 
 	return (

@@ -5,10 +5,10 @@ import usePrevious from '../hooks/usePrevious';
 
 const UseMemoExample = () => {
 	const [ nickname, setNickname ] = useState('');
-	const txtNickname = useRef();
+	const txtNickname = useRef<HTMLInputElement>(null);
 	const prevNickname = usePrevious(nickname);
 	const [ number, setNumber ] = useState('');
-	const [ list, setList ] = useState([]);
+	const [ list, setList ] = useState<number[]>([]);
 
 	// useMemo
 	useMemo(
@@ -34,29 +34,29 @@ const UseMemoExample = () => {
 		};
 	}, []);
 
-	const ConsoleLog = ({ children }) => {
+	const ConsoleLog = ({ children }: any) => {
 		console.log('렌더링');
-		return false;
+		return <></>
 	};
 
-	const handleChange = e => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setNumber(e.target.value);
 	};
 
-	const onInsert = e => {
+	const onInsert = () => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
     setNumber('');
 	};
 
-	const getAverage = numbers => {
+	const getAverage = (numbers: number[]) => {
 		console.log('NoneMemo 평균값 계산중..');
 		if (numbers.length === 0) return 0;
 		const sum = numbers.reduce((a, b) => a + b);
 		return sum / numbers.length;
 	};
 
-	const getMemoAverage = numbers => {
+	const getMemoAverage = (numbers: number[]) => {
 		console.log('Memo 평균값 계산중..');
 		if (numbers.length === 0) return 0;
 		const sum = numbers.reduce((a, b) => a + b);
@@ -78,7 +78,7 @@ const UseMemoExample = () => {
 				<input ref={txtNickname} type='text' placeholder='별명을 입력하세요!' />
 			</div>
 			<div>{nickname}</div>
-			<button onClick={(e) => setNickname(txtNickname.current.value)}>
+			<button onClick={(e) => setNickname(txtNickname.current?.value || '')}>
 				별명입력
 			</button>
 			<div>

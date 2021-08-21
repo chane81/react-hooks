@@ -1,13 +1,19 @@
 import React, { useState, useCallback } from "react";
 
-const Light = React.memo(({ room, on, toggle }) => {
-  console.log({ room, on });
+interface ILight {
+  room: string;
+  on: boolean;
+  toggle: () => void;
+}
 
-  return (
-    <button onClick={toggle}>
-      {room} {on ? "💡" : "⬛"}
-    </button>
-  );
+const Light = React.memo(({ room, on, toggle }: ILight) => {
+	console.log({ room, on });
+
+	return (
+		<button onClick={toggle}>
+			{room} {on ? '💡' : '⬛'}
+		</button>
+	);
 });
 
 const UseCallbackExample = () => {
